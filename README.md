@@ -32,15 +32,15 @@ as part of that checkpoint.
 
 ### The resistor colour code and the ICS-217A versions
 
-|Colour|Version date|Notes|
-|------|------------|-----|
-|BLACK |            |     |
-|BROWN |2021-05-22 |(current version)|
-|RED||
-|ORANGE||
-|YELLOW||
-|GREEN||
-|BLUE||
-|VIOLET||
-|GREY||
-|WHITE||
+| Colour | Version date | Notes             |
+|--------|--------------|-------------------|
+| BLACK  | N/A          | Unused            |
+| BROWN  | 2021-05-22   | (current version) |
+| RED    |              |                   |
+| ORANGE |              |                   |
+| YELLOW |              |                   |
+| GREEN  |              |                   |
+| BLUE   |              |                   |
+| VIOLET |              |                   |
+| GREY   |              |                   |
+| WHITE  |              |                   |
