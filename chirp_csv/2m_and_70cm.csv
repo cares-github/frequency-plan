@@ -1,5 +1,5 @@
 Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,Mode,TStep,Skip,Comment,URCALL,RPT1CALL,RPT2CALL
-0,RED_U1,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,
+0,RED_U2,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,
 1,CLAC 1,147.120000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"CLAC ARES RPTR Clackamas Primary Repeater [OEM Monitored]",,,
 2,CLAC 2,147.140000,+,0.600000,Tone,107.2,88.5,023,NN,FM,5.00,,"CLAC ARES RPTR Clackamas Secondary Repeater",,,
 3,CLAC 3,146.420000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas Primary Simplex",,,
@@ -63,4 +63,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 66,LO 6,432.625000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"LO LDS Stake Comm Secondary",,,
 67,WILS 2,441.875000,+,5.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"CLAC SOUTH Wilsonville Repeater at Parrett Mt.",,,
 68,APRS,144.390000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"IARU Region 2 APRS Frequency",,,
-69,RED_U1,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,
+69,RED_U2,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,
