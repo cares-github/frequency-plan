@@ -35,8 +35,8 @@ as part of that checkpoint.
 | Colour | Version date | Notes             |
 |--------|--------------|-------------------|
 | BLACK  | N/A          | Unused            |
-| BROWN  | 2021-05-22   | (current version) |
-| RED    |              |                   |
+| BROWN  | 2021-05-22   | obsolete          |
+| RED    | 2022-03-23   | current version   |
 | ORANGE |              |                   |
 | YELLOW |              |                   |
 | GREEN  |              |                   |
