@@ -18,29 +18,42 @@ as part of that checkpoint.
 
 ## Contents of this repository
 
-- An Excel master of the ICS-217A. Each version of our ICS-217A has a colour
-  code word associated with it. The most recent version is labelled BROWN.  We
-  iterate through the resistor colour code and provide a date for each
-  vintage (see note below).
+- An Excel master of the Incident Command System's ICS 217A. **This is the root
+  document for all the derived formats**. It's name is always CARES-ICS-217A.xls.
   
+  Each version of our ICS-217A has a colour code word associated with it. The
+  most recent version is labelled RED.  We iterate through the resistor colour
+  code and provide a date for each vintage (see note below). Note that this
+  colour is not associated with file names. Publishable updates are collections
+  of files tagged with a specific version number and that number is related to
+  the colour label.
+  
+  There is a PDF file that derives from the current master XLS file. This has
+  the name CARES-ICS-217A.pdf. Every time a new CARES-ICS-217A.xls is checked
+  into this repository, it is mandatory to check in the corresponding PDF
+  document. The intent use of this document is to allow operators to create a
+  hard copy of the frequency plan for their go-kits (i.e. laminate it).
+
+
+- CHIRP csv files. These reside in the csv_chirp directory. These are
+  derivatives of the Excel master CARES-ICS-217A.xls file.
 
 - A python3 script that generates a CHIRP csv file from the Excel master
   frequency list.
 
-- Any derivatives, like the above-mentioned CHIRP csv file.
-
 
 ### The resistor colour code and the ICS-217A versions
 
-| Colour | Version date | Notes             |
-|--------|--------------|-------------------|
-| BLACK  | N/A          | Unused            |
-| BROWN  | 2021-05-22   | obsolete          |
-| RED    | 2022-03-23   | current version   |
-| ORANGE |              |                   |
-| YELLOW |              |                   |
-| GREEN  |              |                   |
-| BLUE   |              |                   |
-| VIOLET |              |                   |
-| GREY   |              |                   |
-| WHITE  |              |                   |
+| Colour | Version date | Tag | Notes             |
+|--------|--------------|-----|-------------------|
+| BLACK  | N/A          |     | Unused            |
+| BROWN  | 2021-05-22   |     | obsolete          |
+| RED    | 2022-03-23   |     | previous version  |
+| RED U2 | 2023-02-04   |     | current version   |
+| ORANGE | N/A          |     | Unused            |
+| YELLOW |              |     |                   |
+| GREEN  |              |     |                   |
+| BLUE   |              |     |                   |
+| VIOLET |              |     |                   |
+| GREY   |              |     |                   |
+| WHITE  |              |     |                   |
