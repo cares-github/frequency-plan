@@ -11,7 +11,8 @@
 # The programme will insert a sentinel row at the beginning and at the end of a
 # generated CHIRP csv. This is only really useful for the 2m and 70cm version.
 #
-# Time-stamp: <2022-11-07 07:57:05 acw> @author: Andrew Watson
+# Time-stamp: <2023-02-04 22:19:05 acw> @author: Andrew Watson
+# This work is licensed under a CC BY-NC-SA 4.0 international license. 
 #
 
 import getopt
