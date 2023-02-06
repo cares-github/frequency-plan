@@ -152,6 +152,8 @@ g_show_warnings = False
 # The default CTCSS tone can be changed on the command line.
 g_default_ctcss_tone = DEFAULT_CTCSS_TONE
 
+# The number of rows/lines of text to skip when running through the input CSV.
+g_skip_rows = NUMBER_ROWS_TO_IGNORE_IN_SRC
 
 # ----------------------------------------------------------------------
 # Functions
@@ -269,7 +271,7 @@ def read_ICS_217A(ICS_217_file):
     current_line_num = 0
 
     for input_line in ICS_217_file:
-        if current_line_num >= NUMBER_ROWS_TO_IGNORE_IN_SRC:
+        if current_line_num >= g_skip_rows:
             raw_input_lines.append(input_line)
         current_line_num += 1
     return raw_input_lines
@@ -627,16 +629,19 @@ def generate_output(rows, use_sentinel):
 def process_options():
     """
     At present there are only three command line options. They are:
-       -s or --sentinel: to turn on the sentinel row.
-       -v or --verbose:  to turn on verbose messaging.
-       -t n or --tone n: to provide a non-default tone. The tone must be a 
-                         valid CTCSS   tone (no DCS - that's a corner case) or zero.   
+       -f or --skip-first-rows n: tell the program to skip n rows of the input file.
+       -s or --sentinel:          to turn on the sentinel row.
+       -v or --verbose:           to turn on verbose messaging.
+       -t n or --tone n:          to provide a non-default tone. The tone must be a 
+                                  valid CTCSS   tone (no DCS - that's a corner case) or zero.  
+       -w or --show-warnings:     turns warning messages on
 
     Returns True if the sentinel row is to be displayed.
     """
     global g_verbose
     global g_default_ctcss_tone
     global g_show_warnings
+    global g_skip_rows
     
     # Assume that there are no command line options
     turn_on_sentinel = False
@@ -648,7 +653,9 @@ def process_options():
     try:
         # args will contain any file names once any recognised command line
         # arguments have been pulled out
-        opts, args = getopt.getopt(sys.argv[1:], 'svt:', ['sentinel', 'verbose', 'tone='])
+        opts, args = getopt.getopt(sys.argv[1:], 'f:svt:w', 
+                                    ['skip-first-rows=', 'sentinel', 'verbose', 
+                                    'tone=', 'show-warnings'])
     except getopt.GetoptError as err:
         print(f'Invalid command line option: {err}')
         usage()
@@ -656,7 +663,20 @@ def process_options():
 
     # Process the command line arguments
     for o, a in opts:
-        if o in ('-s', '--sentinel'):
+        if o in ('-f', '--skip-first-rows'):
+            g_skip_rows = 0
+            skip_rows = 0
+            try:
+                skip_rows = int(a)
+            except ValueError:
+                warning(f'Trying to convert {a} to a positive integer failed. Ignoring')
+                skip_rows = NUMBER_ROWS_TO_IGNORE_IN_SRC
+            if skip_rows >= 0 and skip_rows < 10:
+                g_skip_rows = skip_rows
+            else:
+                warning("The number of rows to skip is out of range "
+                        f"(0 .. 9): {skip_rows}. Ignoring")
+        elif o in ('-s', '--sentinel'):
             turn_on_sentinel = True
         elif o in ('-v', '--verbose'):
             g_verbose = True
