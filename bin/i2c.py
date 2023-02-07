@@ -628,7 +628,7 @@ def generate_output(rows, use_sentinel):
 # ------------------------------------------------------------------------------
 def process_options():
     """
-    At present there are only three command line options. They are:
+    At present there are five command line options. They are:
        -f or --skip-first-rows n: tell the program to skip n rows of the input file.
        -s or --sentinel:          to turn on the sentinel row.
        -v or --verbose:           to turn on verbose messaging.
