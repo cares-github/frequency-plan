@@ -34,6 +34,9 @@ BASIC_TONE_MODE   = 'Tone'
 TONE_SQUELCH_MODE = 'TSQL'
 DCS_TONE_MODE = 'DTCS' # CHIRP uses DTCS for this field.
 
+# DCS is the more common moniker for digital coded squelch.
+WEB_DCS_TONE_MODE_ACRONYM = 'DCS'
+
 # The programme can be set to skip reading up to the first nine rows. However,
 # this is the default number it will skip.
 DEFAULT_NUM_ROWS_TO_SKIP = 0
@@ -70,7 +73,8 @@ class WEBSITE_CSV_COLUMNS(IntEnum):
     OFFSET = 4
     TONE_MODE = 5
     TX_TONE = 6
-    COMMENT = 7
+    DCS_TONE = 7
+    COMMENT = 8
 
 HEADER_ROW = "Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment"
 
@@ -92,11 +96,15 @@ g_default_ctcss_tone = DEFAULT_CTCSS_TONE
 # input file. However, by default the programme only skips
 # DEFAULT_NUM_ROWS_TO_SKIP
 g_skip_rows = DEFAULT_NUM_ROWS_TO_SKIP
+
+# If this global is set to True, then the application will simply print the help
+# message and quit without further processing.
+g_print_help_and_exit = False
+
 # ----------------------------------------------------------------------
 # Functions
 # ----------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
 def read_raw_input(input_filename):
     """Read rows in from the CHIRP CSV and cherrypick the columns
     
@@ -120,6 +128,7 @@ def read_raw_input(input_filename):
                 skipped_rows += 1
                 continue
 
+            # Load in only the fields we want from the current CHIRP CSV row.
             truncated_row = [
                 raw_row[CHIRP_CSV_COLUMNS.CHANNEL_NUM],
                 raw_row[CHIRP_CSV_COLUMNS.CHANNEL_NAME],
@@ -128,6 +137,7 @@ def read_raw_input(input_filename):
                 raw_row[CHIRP_CSV_COLUMNS.OFFSET],
                 raw_row[CHIRP_CSV_COLUMNS.TONE_MODE],
                 raw_row[CHIRP_CSV_COLUMNS.TX_TONE],
+                raw_row[CHIRP_CSV_COLUMNS.DTCS_CODE],
                 raw_row[CHIRP_CSV_COLUMNS.COMMENT],
             ]
             raw_rows.append(truncated_row)
@@ -135,28 +145,51 @@ def read_raw_input(input_filename):
 
 # ------------------------------------------------------------------------------
 def process_rows(raw_rows):
+    """Creates and formats each row for the output: the website CSV file.
+    
+    Returns - a list containing rows of channel for the website CSV
+    """
     cooked_rows = []
+    current_channel_no = 0
     for rrow in raw_rows:
         crow = []
-        crow.append(rrow[WEBSITE_CSV_COLUMNS.CHANNEL_NUM].strip())
+
+        # First, the channel number. This is unaltered.
+        current_channel_no = rrow[WEBSITE_CSV_COLUMNS.CHANNEL_NUM].strip()
+        crow.append(current_channel_no)
+
+        # The channel name. Again, unaltered.
         crow.append(rrow[WEBSITE_CSV_COLUMNS.CHANNEL_NAME].strip())
+
+        # Chirp uses six decimal places for frequency. At most we only have four
+        # significant digits after the decimal point. Trim down the frequency so
+        # that less web real estate is consumed.
         crow.append(str(format_frequency(rrow[WEBSITE_CSV_COLUMNS.FREQUENCY])))
+
+        # This is the frequency offset direction. It implies that this is a
+        # repeater channel. Use the content exactly from the CHIRP CSV.
         crow.append(rrow[WEBSITE_CSV_COLUMNS.DUPLEX].strip())
 
-        # There may be an offset or not. If there is, make sure it is formatted correctly
+        # There may be an offset in the CHIRP CSV. It goes hand-in-hand with the
+        # row above. If there is an offset, make sure it is formatted correctly
         offset = rrow[WEBSITE_CSV_COLUMNS.OFFSET].strip()
         if len(offset) == 0 or float(offset.strip()) == 0.0:
             crow.append('')
         else:
             crow.append(str(format_offset(offset)))
 
-        # If a tone mode is not set, then we do not put a tone frequency in a column
+        # If a tone mode is not set, then we do not put a tone frequency in a
+        # column. This is counter to what CHIRP does. CHIRP uses a default tone
+        # frequency of 88.5Hz for channels that do not use a CTCSS tone and 023
+        # for channels that do not use a DCS (in Icom and CHIRP parlance: DTCS)
+        # tone.
         mode = rrow[WEBSITE_CSV_COLUMNS.TONE_MODE].strip()
         if mode == DEFAULT_TONE_MODE:
             # No mode, so empty Squelch Type column and empty Tone freq column
             crow.append('')
             crow.append('')
         elif mode == BASIC_TONE_MODE:
+            # This case is when the channel only has a transmit tone.
             crow.append(mode)
             crow.append(rrow[WEBSITE_CSV_COLUMNS.TX_TONE].strip())
         elif mode == TONE_SQUELCH_MODE:
@@ -164,16 +197,21 @@ def process_rows(raw_rows):
             tone_freq = rrow[WEBSITE_CSV_COLUMNS.TX_TONE].strip()
             crow.append(f"Tx: {tone_freq}; Rx: {tone_freq}")
         elif mode == DCS_TONE_MODE:
-            crow.append(mode)
-            crow.append('D023')
+            crow.append(WEB_DCS_TONE_MODE_ACRONYM)
+            crow.append(rrow[WEBSITE_CSV_COLUMNS.DCS_TONE].strip())
         else:
+            # There are no options left. If we see this in the website CSV, then
+            # something is wrong parsing the input. N/A was chosen because it is
+            # benign should the website be populated with content from an
+            # erroneous CHIRP CSV -> website CSV conversion. Better than an
+            # error message being propagated.
+            warning(f"Uninterpretable mode for channel: {current_channel_no}")
             crow.append('N/A')
             crow.append('')
 
         # Finally, the comment row
         crow.append(rrow[WEBSITE_CSV_COLUMNS.COMMENT].strip())
 
-        print(", ".join(crow))
         cooked_rows.append(crow)
     return cooked_rows
 
@@ -197,8 +235,8 @@ def usage():
 Usage: {pname} [options] chirp_csv_file target_csv_file
 
 Where options are:
-       -s     turns on the sentinel row output.
-       -t nnn makes nnn the default CTCSS tone
+       -h     prints this message to stdout and quits.
+       -f n   skips reading the first n [0 - 9] rows of the CHIRP CSV.
        -v     turns on verbose mode.
        -w     turns on warnings mode.
 """
@@ -224,6 +262,11 @@ def warning(s):
         sys.stderr.write("Warning: " + s + '\n')
 
 # ------------------------------------------------------------------------------
+def print_help_message():
+    usage()
+
+# ------------------------------------------------------------------------------
+
 def format_frequency(freq):
     """Format a frequency to the correct number of decimal places and represent it
        as a string
@@ -249,6 +292,7 @@ def process_options():
     """
     At present there are three command line options. They are:
        -f or --skip-first-rows n: tell the program to skip n rows of the input file.
+       -h or --help:              prints a help message and quits.
        -v or --verbose:           to turn on verbose messaging.
        -w or --show-warnings:     turns warning messages on
 
@@ -265,8 +309,8 @@ def process_options():
     try:
         # args will contain any file names once any recognised command line
         # arguments have been pulled out
-        opts, args = getopt.getopt(sys.argv[1:], 'f:vw', 
-                                    ['skip-first-rows=', 'verbose', 'show-warnings'])
+        opts, args = getopt.getopt(sys.argv[1:], 'f:hvw', 
+                                    ['skip-first-rows=', 'help', 'verbose', 'show-warnings'])
     except getopt.GetoptError as err:
         print(f'Invalid command line option: {err}')
         usage()
@@ -285,6 +329,8 @@ def process_options():
             else:
                 warning("The number of rows to skip is out of range "
                         f"(0 .. 9): {skip_rows}. Ignoring")
+        elif o in ('-h', '--help'):
+            g_print_help_and_exit = True
         elif o in ('-v', '--verbose'):
             g_verbose = True
         elif o in ('-w', '--show-warnings'):
@@ -316,7 +362,11 @@ if __name__ == '__main__':
     # Process the command line options
     possible_files = process_options()
 
-    if len(possible_files) == 2:
+    if g_print_help_and_exit:
+        print_help_message
+        sys.exit(0)
+
+    elif len(possible_files) == 2:
         # Prepare the input and output
         raw_rows = read_raw_input(possible_files[0])
         cooked_rows = process_rows(raw_rows)

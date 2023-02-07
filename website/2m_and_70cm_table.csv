@@ -46,7 +46,7 @@ Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
 48,D1-1,147.3200,+,0.6,Tone,100.0,D-1 Primary Net Repeater  [OEM Monitored]
 49,D1-2,146.8400,-,0.6,,,D-1 Secondary / Multnomah Co. ARES Primary Repeater
 50,OEM 1,145.3300,-,0.6,Tone,186.2,OEM Oregon Emergency Management (Salem)
-51,RED C1,146.9800,-,0.6,DTCS,D023,Red Cross Repeater (Portland)
+51,RED C1,146.9800,-,0.6,DCS,023,Red Cross Repeater (Portland)
 52,RED CR,147.4200,,,,,Red Cross Simplex
 53,HRT 1,440.4750,+,5.0,Tone,123.0,HEART Net Primary Repeater
 54,HRT 2,442.7000,+,5.0,Tone,123.0,HEART Net Secondary Repeater
