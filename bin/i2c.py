@@ -25,9 +25,16 @@ import sys
 # Constants - all should be capitalised
 # ----------------------------------------------------------------------
 
+# The version token file stores a small string that is used to populate the
+# channel name in the first or last or both channels in a radio. Be sure to
+# update that file when changing the version name for a frequency plan release.
+
+VERSION_TOKEN_FILE = "../CURRENT_VERSION_TOKEN.txt"
+
 # Be sure to update this string as it is prepended to the list of rows and
 # added to the end of the list for writing out to the CSV.
-CARES_SENTINEL_ROW = ",RED_U2,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,"
+CARES_CONTROL_CHANNEL_START = ","
+CARES_CONTROL_CHANNEL_END = ",147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,"
 
 # The ICS 217A file emitted from Excel contains a certain number of header
 # rows. These are ignored and not added to the resultant CHIRP csv file. The
@@ -125,18 +132,17 @@ DCS_TONE_REGEX = re.compile('^\s*[dD]?[0-7]?[0-7][1-7]\s*$')
 
 # What CHIRP sets for the default DCS values
 DEFAULT_DCS_TONE_CODE = '023'
-DEFAULT_DCS_POLARITY = 'NN'
-
+DEFAULT_DCS_POLARITY  = 'NN'
 
 # What has a given tone field been identified as? These are the options.
 TONE_TYPE_UNRECOGNISED = 0
-TONE_TYPE_CTCSS = 100
-TONE_TYPE_DCS = 200
+TONE_TYPE_CTCSS        = 100
+TONE_TYPE_DCS          = 200
 
 DEFAULT_TONE_MODE = '' # There is no mode - neither Tone, TSQL, DCS etc.
 BASIC_TONE_MODE   = 'Tone'
 TONE_SQUELCH_MODE = 'TSQL'
-DCS_TONE_MODE = 'DTCS' # CHIRP uses DTCS for this field.
+DCS_TONE_MODE     = 'DTCS' # CHIRP uses DTCS for this field.
 
 # ----------------------------------------------------------------------
 # Global variables - used sparingly to control things like verbosity
@@ -154,6 +160,9 @@ g_default_ctcss_tone = DEFAULT_CTCSS_TONE
 
 # The number of rows/lines of text to skip when running through the input CSV.
 g_skip_rows = NUMBER_ROWS_TO_IGNORE_IN_SRC
+
+# The version control channel row information. This starts off incomplete and gets filled in during the setup phase of this programme's execution.
+g_control_channel = None
 
 # ----------------------------------------------------------------------
 # Functions
@@ -201,58 +210,7 @@ def warning(s):
         sys.stderr.write("Warning: " + s + '\n')
 
 # ------------------------------------------------------------------------------
-def setup_io(possible_files):
-    """Find out the filenames the user wants to work with, then open them.
-
-    possible_files - a list of files for input and output. If this parameter is a
-    zero-lengthed list, then there were no files specified on the command line.
-    returns an open file object for input and output.
-    """
-
-    # Assume that the input and output streams are being used.
-    input_file = sys.stdin
-    output_file = sys.stdout
-
-    if len(possible_files) == 0:
-        # Just the programme name and possibly command line arguments specified.
-        # Assume that the input and output are on stdin and stdout respectively.
-        pass
-    elif len(possible_files) == 1:
-        # There's only one argument, then that means the input file was
-        # specified. Output goes to stdout
-        try:
-            input_file = open(possible_files[0], 'r')
-        except OSError:
-            print(sys.argv[0] + ": Could not open input ICS 217A csv file: " + possible_files[0])
-            sys.exit(3)
-
-    elif len(possible_files) == 2:
-        # Both files are specified. First attempt to open the input file.
-        try:
-            verbose(f"Opening the file: {possible_files[0]} for reading")
-            input_file = open(possible_files[0], 'r')
-        except OSError:
-            print(sys.argv[0] + ": Could not open input ICS 217A csv file: " + possible_files[0])
-            exit(4)
-
-        # Successfully opened the input file. Now attempt to open the output file.
-        try:
-            verbose(f"Opening the file: {possible_files[1]} for writing")
-            output_file = open(possible_files[1], 'w')
-        except OSError:
-            print(sys.argv[0] + ": Could not open CHIRP output csv file: " + possible_files[1])
-            exit(5)
-
-    else:
-        # More arguments specified than can be handled. Let the user know and bail out.
-        print(sys.argv[0] + ": Error: too many command line arguments")
-        usage()
-        exit(6)
-
-    return (input_file, output_file)
-
-# ------------------------------------------------------------------------------
-def read_ICS_217A(ICS_217_file):
+def read_ICS_217A(ICS_217A_filename):
     """
     Reads in the frequency data from the CARES ICS 217A
 
@@ -269,11 +227,12 @@ def read_ICS_217A(ICS_217_file):
     """
     raw_input_lines = []
     current_line_num = 0
+    with open(ICS_217A_filename, mode='r', newline=None) as ip:
+        for input_line in ip:
+            if current_line_num >= g_skip_rows:
+                raw_input_lines.append(input_line)
+            current_line_num += 1
 
-    for input_line in ICS_217_file:
-        if current_line_num >= g_skip_rows:
-            raw_input_lines.append(input_line)
-        current_line_num += 1
     return raw_input_lines
 
 # ------------------------------------------------------------------------------
@@ -338,7 +297,6 @@ def is_dcs_tone(tone_str):
     Returns a tuple. The first element tells you if the input is a DCS tone or not. These are indicated by TONE_TYPE_DCS or TONE_TYPE_UNRECOGNIED respectively. The second element is the tone in string form ([0-9][1-9]).
     """
 
-
     # Make sure the tone string is really there
     if tone_str is None:
         warning("Tone string was null. Reverting to default DCS value: "
@@ -388,7 +346,6 @@ def is_dcs_tone(tone_str):
     else:
         warning(f"This value is not a valid DCS tone: {raw_tone}")
     return (TONE_TYPE_UNRECOGNISED, tone_str)
-
 
 # ------------------------------------------------------------------------------
 def parse_tone(tone_str):
@@ -576,7 +533,6 @@ def ics_parse(raw_ics_data):
          chirp_dcs_code,
          not_used) = parse_tones(ics_row[6], ics_row[7])
 
-
         chirp_description = cleanse_comments(ics_row[8])
         chirp_changes = ics_row[9]
         ics_row_counter += 1
@@ -602,41 +558,104 @@ def ics_parse(raw_ics_data):
              ""])                      # RPT2CALL - not used
     return chirp_cooked_rows
 
+
+# ------------------------------------------------------------------------------
+def get_io_files(args):
+    """Checks that the user passed in some filenames
+
+    This function currently bails out if the wrong number of files were specified.
+
+    Returns - a tuple containing the input file name and output file name
+    """
+    input_filename = None
+    output_filename = None
+    if len(args) == 2:
+        input_filename, output_filename = args[0], args[1]
+    else:
+        print ("Incorrect number of filenames. There should be an input and output file specified")
+        sys.exit(1)
+    return (input_filename, output_filename)
+
 # ------------------------------------------------------------------------------
 
-def generate_output(rows, use_sentinel):
+def generate_output(output_filename, rows, use_control_channel):
+    """Writes the generated rows out to the specified file.
+
+    output_filename - just like it says
+    rows - the channel rows to write out to output_filename
+    use_control_channel - if True, then the control channel is written out.
     """
-    Prints the generated CSV rows to standard output.
+    with open(output_filename, 'w', newline=None) as op:
+        op.write(CHIRP_CSV_HEADER_FIELDS + '\n')
+
+        # Put in the row that tells us this is the particular colour plan.
+        if use_control_channel:
+            op.write("0" + g_control_channel + '\n')
+
+        last_row = ""
+        for r in rows:
+            # Get the location (i.e. row) number for this record.
+            last_row = r[0]
+            op.write(",".join([str(field) for field in r]) + '\n')
+
+        # Put in the row that tells us this is the particular colour plan.
+        if use_control_channel:
+            tail_row = int(last_row) + 1
+            op.write(f"{tail_row}" + g_control_channel + '\n')
+
+# ------------------------------------------------------------------------------
+def load_version_channel_name():
+    """Loads and uses the version channel name from a token file in a specific location
+
+    Reads in the file (hardwired path/name stored in VERSION_TOKEN_FILE) and uses that content, if it can to build up the version channel row information.
+
+    This function will shut the programme down if the file is not found or, if it is found, the data does not match the required pattern.
     """
-    print(CHIRP_CSV_HEADER_FIELDS)
+    global g_control_channel
+    # A bunch of regular expressions. These only get used once, so it is fine to
+    # keep them hidden away in this function definition.
+    #
+    # Matches any line that has either no or only whitespace.
+    blank_line_re = re.compile('^\s*$')
 
-    # Put in the row that tells us this is the particular colour plan.
-    if use_sentinel:
-        print("0" + CARES_SENTINEL_ROW)
+    # Comment lines in the version token file start with a # sign. We'll assume
+    # that some space characters could precede the # and ignore those..
+    comment_line_re = re.compile('^\s*#.*$')
 
-    last_row = ""
-    for r in rows:
-        # Get the location (i.e. row) number for this record.
-        last_row = r[0]
-        print(",".join([str(field) for field in r]))
+    # The regexp that matches the version token. Basically this can be between 1
+    # and 6 alphanumeric characters and an underscore. (\w = [a-zA-Z0-9_])
+    version_token_re = re.compile('^\s*\w{1,6}\s*$')
 
-    # Put in the row that tells us this is the particular colour plan.
-    if use_sentinel:
-        tail_row = int(last_row) + 1
-        print(f"{tail_row}" + CARES_SENTINEL_ROW)
+    with open(VERSION_TOKEN_FILE, newline='') as version_file:
+        for line in version_file:
+            if blank_line_re.match(line):
+                # Ignore blank lines
+                continue
+            elif comment_line_re.match(line):
+                # ignore comment lines
+                continue
+            elif version_token_re.match(line):
+                # Should have the version channel name. Check that this conforms
+                # to the specification of just one to six characters.
+                g_control_channel = CARES_CONTROL_CHANNEL_START +  line.strip() + CARES_CONTROL_CHANNEL_END
+                break
+            else:
+                line.strip()
+                warning(f"Unexpected content in the version token file: {line}")
+                sys.exit(11)
 
 # ------------------------------------------------------------------------------
 def process_options():
     """
     At present there are five command line options. They are:
-       -f or --skip-first-rows n: tell the program to skip n rows of the input file.
-       -s or --sentinel:          to turn on the sentinel row.
+       -f or --skip-first-rows n: tell the programme to skip n rows of the input file.
+       -c or --control_ch:        tells the programme to insert the control channel.
        -v or --verbose:           to turn on verbose messaging.
        -t n or --tone n:          to provide a non-default tone. The tone must be a 
                                   valid CTCSS   tone (no DCS - that's a corner case) or zero.  
        -w or --show-warnings:     turns warning messages on
 
-    Returns True if the sentinel row is to be displayed.
+    Returns True if the version name control channel row is to be displayed.
     """
     global g_verbose
     global g_default_ctcss_tone
@@ -644,7 +663,7 @@ def process_options():
     global g_skip_rows
     
     # Assume that there are no command line options
-    turn_on_sentinel = False
+    turn_on_control_channel = False
 
     # This list will contain any arguments not processed by the getopts
     # function. For this application, the list may include filenames if the user
@@ -653,8 +672,8 @@ def process_options():
     try:
         # args will contain any file names once any recognised command line
         # arguments have been pulled out
-        opts, args = getopt.getopt(sys.argv[1:], 'f:svt:w', 
-                                    ['skip-first-rows=', 'sentinel', 'verbose', 
+        opts, args = getopt.getopt(sys.argv[1:], 'f:cvt:w', 
+                                    ['skip-first-rows=', 'control_ch', 'verbose', 
                                     'tone=', 'show-warnings'])
     except getopt.GetoptError as err:
         print(f'Invalid command line option: {err}')
@@ -676,8 +695,8 @@ def process_options():
             else:
                 warning("The number of rows to skip is out of range "
                         f"(0 .. 9): {skip_rows}. Ignoring")
-        elif o in ('-s', '--sentinel'):
-            turn_on_sentinel = True
+        elif o in ('-c', '--control_ch'):
+            turn_on_control_channel = True
         elif o in ('-v', '--verbose'):
             g_verbose = True
         elif o in ('-w', '--show-warnings'):
@@ -690,7 +709,7 @@ def process_options():
         else:
             assert False, f"Unhandled option: {o}"
 
-    return turn_on_sentinel, args
+    return turn_on_control_channel, args
 
 
 # ==============================================================================
@@ -713,19 +732,18 @@ def process_options():
 if __name__ == '__main__':
 
     # Process the command line options
-    use_sentinel, possible_files = process_options()
+    use_control_channel, args = process_options()
 
-    # Prepare the input and output
-    input_file, output_file = setup_io(possible_files)
+    # Figure out what files we're working with. 
+    input_filename, output_filename = get_io_files(args)
+
+    # Load the current version information
+    load_version_channel_name()
 
     # Load the content from the ICS 217A exported from Excel
-    raw_input_lines = read_ICS_217A(input_file)
+    raw_input_lines = read_ICS_217A(input_filename)
 
     # Interpret the ICS 217A and clean up the data from this file ready for the
     # conversion to CHIRP format.
     cooked = ics_parse(raw_input_lines)
-    generate_output(cooked, use_sentinel)
-
-    # Close file descriptors
-    input_file.close()
-    output_file.close()
+    generate_output(output_filename, cooked, use_control_channel)
