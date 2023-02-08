@@ -1,0 +1,7 @@
+# The following string is used to set the version in various CHIRP CSV
+# files and, perhaps other files too. The token can be no more than six
+# characters long.
+#
+# Time-stamp: <2023-02-07 19:29:05 acw> @Author: Andrew Watson
+
+RED_U2
