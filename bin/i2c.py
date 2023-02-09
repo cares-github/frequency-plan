@@ -560,7 +560,12 @@ def ics_parse(raw_ics_data):
 
 
 # ------------------------------------------------------------------------------
-def get_io_files(args):
+class NumberOfFilesError(Exception):
+    """Raised when the user passes in the wrong number of files on the command line.
+    """
+    pass
+
+def get_filenames(args):
     """Checks that the user passed in some filenames
 
     This function currently bails out if the wrong number of files were specified.
@@ -572,8 +577,9 @@ def get_io_files(args):
     if len(args) == 2:
         input_filename, output_filename = args[0], args[1]
     else:
+        # TODO - use proper Python logging
         print ("Incorrect number of filenames. There should be an input and output file specified")
-        sys.exit(1)
+        raise NumberOfFilesError()
     return (input_filename, output_filename)
 
 # ------------------------------------------------------------------------------
@@ -734,10 +740,17 @@ if __name__ == '__main__':
     # Process the command line options
     use_control_channel, args = process_options()
 
-    # Figure out what files we're working with. 
-    input_filename, output_filename = get_io_files(args)
+    # Figure out what files we're working with.
+    try:
+        input_filename, output_filename = get_filenames(args)
+    except NumberOfFilesError:
+        # The wrong number of files were specified on the command line.
+        sys.exit(-1)
 
-    # Load the current version information
+    # Load the current CARES frequency plan version information. This may be
+    # used as a channel name for the first channel in the 2m/70cm list (if the
+    # user of the programme  chooses). It can also be found as the last channel
+    # too.
     load_version_channel_name()
 
     # Load the content from the ICS 217A exported from Excel
