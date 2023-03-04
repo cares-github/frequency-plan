@@ -1,5 +1,5 @@
 Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,Mode,TStep,Skip,Comment,URCALL,RPT1CALL,RPT2CALL
-250,C6M 1,53.310000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 1--Primary",,,
+250,C6M 1,52.310000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 1--Primary",,,
 251,C6M 2,52.330000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 2",,,
 252,C6M 3,52.350000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 3",,,
 253,C6M 4,52.370000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 4",,,
