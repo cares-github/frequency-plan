@@ -10,7 +10,7 @@ Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
 9,CLAD 2,441.0375,,,,,CLAC ARES WinLink RMS Gateway 2
 10,CLAD 3,441.0625,,,,,CLAC ARES WinLink RMS Gateway 3
 11,CLAD 4,441.5250,,,,,CLAC ARES WinLink RMS Gateway 4
-12,CLAD 5,145.7700,,,,,CLAC ARES DIGT--Winlink RMS Packet
+12,CLAD 5,145.7700,,,,,CLAC ARES--Winlink VARA Packet RMS--Under Construction
 13,CLAD 6,145.5700,,,,,CLAC ARES DIGT--RMS- GTWY KD7ZDO-10 packet gateway / Clackamas Co. EOC: kd7zdo@winlink.org
 14,CLAD 7,145.8300,,,,,CLAC ARES DIGT--Clackamas Co. KD7ZDO-5 WinLink P to P
 15,CFD1 1,145.7500,,,,,CLAC CERT SIMP - CERT CFD 1
@@ -18,27 +18,27 @@ Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
 17,CLOG 1,431.8250,,,,,CLAC ARES SIMP_ CARES Logistics 1
 18,CLOG 2,431.8750,,,,,CLAC ARES SIMP_ CARES Logistics 2
 20,EAST 1,146.5400,,,,,CLAC EAST SIMP Clackamas East County ARES Simplex
-21,EAST 3,145.7100,,,,,CLAC EAST DIGT CC East Digital/Tertiary
+21,EAST 3,145.7100,,,,,CLAC EAST Winlink VARA Packet / Tertiary analog voice
 22,EVENT1,440.2750,+,5.0,TSQL,Tx: 103.5; Rx: 103.5,CLAC ARES Portable Event Repeater
 24,LO 1,444.3000,+,5.0,TSQL,Tx: 82.5; Rx: 82.5,CLAC LO--1R--RPTR Lake Oswego ARES Primary Primary (Echolink enabled)
 25,LO 1S,444.3000,,,Tone,82.5,CLAC LO--1S--Simplex (on repeater output channel)
 26,LO 2,146.5000,,,TSQL,Tx: 82.5; Rx: 82.5,CLAC LO--2--SIMP Lake Oswego ARES Simplex Secondary
-27,LO 3,145.5300,,,,,CLAC LO--3--DIGT Digital/Tertiary
+27,LO 3,145.5300,,,,,CLAC LO--3--Winlink VARA Packet / Tertiary analog voice
 28,LO 4,431.9000,,,,,CLAC LO--4--SIMP_ Lake Oswego Logistics
 30,MOLA 1,440.7000,+,5.0,TSQL,Tx: 77.0; Rx: 77.0,CLAC CERT RPTR Molalla Fire CERT
 31,NOCO 1,147.5000,,,,,CLAC NORT SIMP Clackamas North County ARES Simplex
-32,NOCO 3,145.6700,,,,,CLAC NORT DIGT CC North Digital/Tertiary
+32,NOCO 3,145.6700,,,,,CLAC NORT Winlink VARA Packet / Tertiary analog voice
 33,OC 1,442.0750,+,5.0,Tone,103.5,CLAC OC-- RPTR Oregon City ARES Repeater
 34,OC 2,146.5600,,,,,CLAC OC-- SIMP Oregon City ARES Simplex
-35,OC 3,145.6300,,,,,CLAC OC-- DIGT Digital/Tertiary
+35,OC 3,145.6300,,,,,CLAC OC--Winlink VARA Packet / Tertiary analog voice
 36,OC 4,431.9250,,,,,CLAC OC-- SIMP_ Logistics
 37,SAND 1,145.4300,-,0.6,Tone,107.2,CLAC SOUT RPTR Sandy Repeater KJ7IY
 38,SAND 2,145.8100,,,,,CLAC SOUT SIMP Sandy Simplex
 39,WEST 2,146.9200,-,0.6,Tone,100.0,CLAC WEST Repeater
 40,SOCO 2,146.5800,,,,,CLAC SOUT SIMP Clackamas South County ARES Simplex
-41,SOCO 3,145.6900,,,,,CLAC SOUT DIGT CC South Digital/Tertiary
+41,SOCO 3,145.6900,,,,,CLAC SOUT--Winlink VARA Packet / Tertiary analog voice
 42,WEST 1,145.5500,,,,,CLAC WEST SIMP Clackamas West County ARES Simplex
-43,WEST 3,145.7300,,,,,CLAC WEST DIGT CC West Digital/Tertiary
+43,WEST 3,145.7300,,,,,CLAC WEST--Winlink VARA Packet / Tertiary analog voice
 44,WILS 1,146.4600,,,,,CLAC WEST SIMP Wilsonville Simplex
 45,WLIN 1,146.4400,,,,,CLAC WEST SIMP West Linn Simplex
 46,NUCALL,446.0000,,,,,National UHF Calling Simplex Frequency
@@ -62,4 +62,4 @@ Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
 66,LO 6,432.6250,,,,,LO LDS Stake Comm Secondary
 67,WILS 2,441.8750,+,5.0,Tone,100.0,CLAC SOUTH Wilsonville Repeater at Parrett Mt.
 68,APRS,144.3900,,,,,IARU Region 2 APRS Frequency
-69,RED_U2,147.1200,+,0.6,Tone,100.0,
+69,RED_U3,147.1200,+,0.6,Tone,100.0,
