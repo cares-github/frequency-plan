@@ -46,8 +46,8 @@ CARES_CONTROL_CHANNEL_END = ",147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5
 # NUMBER_ROWS_TO_IGNORE_IN_SRC = 3
 NUMBER_ROWS_TO_IGNORE_IN_SRC = 0
 
-# The ICS 217A has 11 columns. Some contain data, some don't have to.
-ICS_217A_NUMBER_OF_COLUMNS = 11
+# The ICS 217A has 10 columns. Some contain data, some don't have to.
+ICS_217A_EXPECTED_NUMBER_OF_COLUMNS = 10
 
 # The CHIRP CSV file header fields. This is in list form rather than a string
 # just to make it easier to see the individual fields and simplifies rearranging
@@ -459,8 +459,10 @@ def ics_parse(raw_ics_data):
         logging.info(f'Processing row {ics_row_counter}: {line}')
         # Break the ICS line up into pieces
         ics_row = line.split(',')
-        if len(ics_row) < 10:
-            logging.warning(f"Row {ics_row[0]} does not have enough columns: {len(ics_row)}")
+        if len(ics_row) < ICS_217A_EXPECTED_NUMBER_OF_COLUMNS:
+            logging.error(f"Row {ics_row[0]} ({ics_row[1]}) " +\
+                          "does not have enough columns: " +\
+                          f"{len(ics_row)}")
             # Ignore lines that do not have sufficient columns
             ics_row_counter += 1
             continue
