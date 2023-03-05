@@ -83,7 +83,11 @@ CHIRP_CHANNEL_NO_START = 0
 
 DEFAULT_FREQUENCY = 147.12
 
+# Not all channels use FM. The HF channels will use other modes. This set can be used to check a
+# given channel's mode is valid.
 DEFAULT_MODULATION = 'FM'
+VALID_MODULATION_MODES = {DEFAULT_MODULATION, 'CW', 'LSB', 'USB'}
+
 DEFAULT_SKIP = '' # Should the input channel be skipped. No - we take everything.
 
 # Some radios have a problem with the tuning step being 6.25 kHz. We're going to
@@ -460,9 +464,8 @@ def ics_parse(raw_ics_data):
         # Break the ICS line up into pieces
         ics_row = line.split(',')
         if len(ics_row) < ICS_217A_EXPECTED_NUMBER_OF_COLUMNS:
-            logging.error(f"Row {ics_row[0]} ({ics_row[1]}) " +\
-                          "does not have enough columns: " +\
-                          f"{len(ics_row)}")
+            logging.error(f"Ignoring row {ics_row_counter}) since it has too few columns: " +\
+                          f"{ics_row}")
             # Ignore lines that do not have sufficient columns
             ics_row_counter += 1
             continue
@@ -502,9 +505,13 @@ def ics_parse(raw_ics_data):
                 chirp_duplex_offset_sign = '-'
         chirp_offset = format_frequency(abs(t_offset))
 
-
-        # This will almost certainly be 'FM'
-        chirp_modulation = DEFAULT_MODULATION
+        # Note that the HF modes use modulation modes other than FM
+        mode = ics_row[5].strip().upper()
+        if mode not in VALID_MODULATION_MODES:
+            logging.warning(f"Row {ics_row_counter} does not have a valid " +\
+                            f"modulation mode: \'{mode}\'. Using default of {DEFAULT_MODULATION}")
+            mode = DEFAULT_MODULATION
+        chirp_modulation = mode
 
         # Sort out the receive tones for CHIRP. Make some assumptions based on
         # how CHIRP does things, as to what are reasonable defaults.
