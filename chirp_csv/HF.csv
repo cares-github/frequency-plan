@@ -22,3 +22,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 221,SATERN,3.977700,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Satern Western Regional Net",,,
 222,N10CAL,29.600000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"National 10 Meter FM Call",,,
 223,NW LDS,3.815000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"North America/Northwest LDS Emergency Channel",,,
+224,RED U3,3.815000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Version Control Channel--Red U3 released 03-08-23",,,

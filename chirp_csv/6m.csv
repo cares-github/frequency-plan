@@ -3,5 +3,6 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 251,C6M 2,52.330000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 2",,,
 252,C6M 3,52.350000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 3",,,
 253,C6M 4,52.370000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 4",,,
-254,C6M 5,52.390000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 5",,,
+254,C6M 5,52.390000,,0.000000,,88.5,88.5,023,NN,USB,5.00,,"CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 5",,,
 255,N6CALL,52.525000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"National 6 meter call",,,
+256,RED U3,52.525000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"Version Control Channel--Red U3 released 03-08-23",,,

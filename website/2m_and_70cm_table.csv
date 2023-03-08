@@ -62,4 +62,4 @@ Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
 66,LO 6,432.6250,,,,,LO LDS Stake Comm Secondary
 67,WILS 2,441.8750,+,5.0,Tone,100.0,CLAC SOUTH Wilsonville Repeater at Parrett Mt.
 68,APRS,144.3900,,,,,IARU Region 2 APRS Frequency
-69,RED_U3,147.1200,+,0.6,Tone,100.0,
+69,RED U3,144.3900,,,,,Version Control Channel--Red U3 released 03-08-23

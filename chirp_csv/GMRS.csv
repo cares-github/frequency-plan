@@ -11,3 +11,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 10,SHE21R,462.700000,+,5.000000,TSQL,141.3,141.3,023,NN,FM,5.00,,"GMRS RPTR Sherwood",,,
 11,WIL22R,462.725000,+,5.000000,TSQL,110.9,110.9,023,NN,FM,5.00,,"GMRS RPTR Wilsonville",,,
 12,OAK22R,462.725000,+,5.000000,TSQL,123.0,123.0,023,NN,FM,5.00,,"GMRS RPTR Oak Lodge CERT",,,
+13,RED U3,462.725000,+,5.000000,TSQL,123.0,123.0,023,NN,FM,5.00,,"Version Control Channel--Red U3 released 03-08-23",,,
