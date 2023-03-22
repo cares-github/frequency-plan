@@ -53,7 +53,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 56,OEM 2,147.020000,+,0.600000,Tone,186.2,88.5,023,NN,FM,5.00,,"Oregon Emergency Management (OEM Salem)",,,
 57,OEM 3,144.990000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"RMS Winlink Packet W7ODN-10 / OEM EOC: w7oem@winlink.org",,,
 58,INTEL1,145.520000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"Intel Emergency Amateur Radio Service (IEARS)",,,
-59,LDS 1,146.700000,-,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,""CARS LDS Regional Emergency Network--Stonehenge Tower",,,
+59,LDS 1,146.700000,-,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"CARS LDS Regional Emergency Network--Stonehenge Tower",,,
 61,CLAC 8,442.975000,+,5.000000,TSQL,103.5,103.5,023,NN,FM,5.00,,"CLAC ARES RPTR Repeater Crutcher Bench (primarily Hwy. 26 corridor Sandy to Mt. Hood)",,,
 62,CLAC 9,145.790000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES Spare",,,
 63,CLAC10,444.400000,+,5.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"CLAC ARES West South Saddle Mt.",,,
