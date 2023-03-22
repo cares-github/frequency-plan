@@ -49,7 +49,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 51,RED C1,146.980000,-,0.600000,DTCS,88.5,88.5,023,NN,FM,5.00,,"Red Cross Repeater (Portland)",,,
 52,RED CR,147.420000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"Red Cross Simplex",,,
 53,HRT 1,440.475000,+,5.000000,Tone,123.0,88.5,023,NN,FM,5.00,,"HEART Net Primary Repeater",,,
-54,HRT 2,442.700000,+,5.000000,Tone,123.0,88.5,023,NN,FM,5.00,,"HEART Net Secondary Repeater",,,
+54,HRT 2,442.700000,+,5.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"HEART Net Secondary Repeater",,,
 56,OEM 2,147.020000,+,0.600000,Tone,186.2,88.5,023,NN,FM,5.00,,"Oregon Emergency Management (OEM Salem)",,,
 57,OEM 3,144.990000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"RMS Winlink Packet W7ODN-10 / OEM EOC: w7oem@winlink.org",,,
 58,INTEL1,145.520000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"Intel Emergency Amateur Radio Service (IEARS)",,,
