@@ -44,17 +44,17 @@ as part of that checkpoint.
 
 ### The resistor colour code and the ICS-217A versions
 
-| Colour | Version date | Tag      | Notes             |
-|--------|--------------|----------|-------------------|
-| BLACK  | N/A          |          | Unused            |
-| BROWN  | 2021-05-22   |          | obsolete          |
-| RED    | 2022-03-23   |          | obsolete          |
-| RED U2 | 2023-02-04   | RED-U2.2 | previous version  |
-| RED U3 | 2023-03-08   | RED-U3   | current version   |
-| ORANGE | 2023-09-11   | Unknown  | Up and coming     |
-| YELLOW |              |          |                   |
-| GREEN  |              |          |                   |
-| BLUE   |              |          |                   |
-| VIOLET |              |          |                   |
-| GREY   |              |          |                   |
-| WHITE  |              |          |                   |
+| Colour | Version date | Tag       | Notes             |
+|--------|--------------|-----------|-------------------|
+| BLACK  | N/A          |           | Unused            |
+| BROWN  | 2021-05-22   |           | obsolete          |
+| RED    | 2022-03-23   |           | obsolete          |
+| RED U2 | 2023-02-04   | RED-U2.2  | previous version  |
+| RED U3 | 2023-03-08   | RED-U3    | current version   |
+| ORANGE | N/A          |           | Unused            |
+| YELLOW | 2024         | YELLOW-U1 |                   |
+| GREEN  |              |           |                   |
+| BLUE   |              |           |                   |
+| VIOLET |              |           |                   |
+| GREY   |              |           |                   |
+| WHITE  |              |           |                   |
