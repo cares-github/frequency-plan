@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 #
 # Programme that converts a CARES frequency plan into a CHIRP compatible CSV
 # file.
