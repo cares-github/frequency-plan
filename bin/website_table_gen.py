@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 #
 # Programme that converts a derived frequency plan CSV into a format suitable
 # for the CARES website.
@@ -22,7 +22,7 @@ import sys
 
 # Be sure to update this string as it is prepended to the list of rows and
 # added to the end of the list for writing out to the CSV.
-CARES_SENTINEL_ROW = ",RED_U3,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,"
+CARES_SENTINEL_ROW = ",YELLOW,147.120000,+,0.600000,Tone,100.0,100.0,023,NN,FM,5.00,,,,,,,,"
 
 # This can be changed if a tone value is required. Otherwise, it's set to blank
 # for any channels that are not using either CTCSS tone, DCS tone or tone

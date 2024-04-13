@@ -1,0 +1,69 @@
+Channel, Name, Frequency, Duplex, Offset, Squelch Type, Tone Freq, Comment
+2,CLAC 2,147.1400,+,0.6,Tone,107.2,CLAC ARES RPTR Clackamas Secondary Repeater
+3,CLAC 3,146.4200,,,,,CLAC ARES SIMP Clackamas Primary Simplex
+4,CLAC 4,146.9600,-,0.6,Tone,127.3,CLAC ARES RPTR Clackamas Tertiary Repeater (W7OTV)
+5,CLAC 5,444.2250,+,5.0,Tone,100.0,CLAC ARES RPTR Clackamas Secondary Repeater--Mt. Hood--K7RPT
+6,CLAC 6,440.2500,+,5.0,Tone,127.3,CLAC ARES RPTR Clackamas Tertiary Repeater (W7OTV)
+7,CLAC 7,441.9000,+,5.0,Tone,103.5,CLAC ARES RPTR Repeater Highland Butte
+8,CLAC 8,440.1250,+,5.0,Tone,103.5,CLAC ARES RPTR Repeater Crutcher Bench (primarily Hwy. 26 corridor Sandy to Mt. Hood)
+9,CLAC 9,145.7900,,,,,CLAC ARES Spare
+10,CLAC10,444.4000,+,5.0,Tone,100.0,CLAC ARES-Wilsonville-South Saddle Mt.
+11,CLAD 1,440.9875,,,,,CLAC ARES WinLink RMS Gateway 1
+12,CLAD 2,441.0375,,,,,CLAC ARES WinLink RMS Gateway 2
+13,CLAD 3,441.0625,,,,,CLAC ARES WinLink RMS Gateway 3
+14,CLAD 4,441.5250,,,,,CLAC ARES WinLink VARA-FM RMS KD7ZDO-12 located at C-EOC
+15,CLAD 5,145.7700,,,,,CLAC ARES--Winlink VARA-FM RMS--KD7ZDO-11 located at C-EOC
+16,CLAD 6,145.5700,,,,,CLAC ARES DIGT--Winlink Packet RMS-- KD7ZDO-10--kd7zdo@winlink.org C-EOC
+17,CLAD 7,145.8300,,,,,CLAC ARES Winlink VARA-FM P-P KD7ZDO-Digipeater --KD7ZDO-5 C-EOC
+18,CFD1 1,145.7500,,,,,CLAC CERT SIMP - CERT CFD 1
+19,CFD1 2,431.8500,,,,,CLAC CERT SIMP - CFD 1 CERT Secondary
+20,CLOG 1,431.8250,,,,,CLAC ARES SIMP-CARES Logistics 1
+21,CLOG 2,431.8750,,,,,CLAC ARES SIMP-CARES Logistics 2
+22,EAST 1,146.5400,,,,,CLAC EAST SIMP-Clackamas East County ARES Simplex
+23,EAST 3,145.7100,,,,,CLAC EAST Winlink VARA Packet / Tertiary analog voice
+24,EVENT1,440.2750,+,5.0,TSQL,Tx: 103.5; Rx: 103.5,CLAC ARES Portable Event Repeater UHF
+25,EVENT2,144.6500,+,0.6,TSQL,Tx: 103.5; Rx: 103.5,CLAC ARES Portable Event Repeater VHF
+26,LO 1,444.3000,+,5.0,TSQL,Tx: 82.5; Rx: 82.5,CLAC LO--1R--RPTR Lake Oswego ARES Primary Primary (Echolink enabled)
+27,LO 2,146.5000,,,TSQL,Tx: 82.5; Rx: 82.5,CLAC LO--2--SIMP Lake Oswego ARES Simplex Secondary
+28,LO 3,145.5300,,,,,CLAC LO--3--Winlink VARA-FM Packet Post Office WA7LO-10 / Digital Channel/Tertiary analog voice
+29,LO 4,431.9000,,,,,CLAC LO--4--SIMP- Lake Oswego Logistics
+30,LO 5,147.4600,,,,,LO LDS Stake Comm Primary
+31,LO 6,432.6250,,,,,LO LDS Stake Comm Secondary
+32,NOCO 1,147.5000,,,,,CLAC NORT SIMP Clackamas North County ARES Simplex
+33,NOCO 3,145.6700,,,,,CLAC NORT Winlink VARA Packet / Tertiary analog voice
+34,OC 1,442.0750,+,5.0,Tone,103.5,CLAC OC-- RPTR Oregon City ARES Repeater
+35,OC 2,146.5600,,,,,CLAC OC-- SIMP Oregon City ARES Simplex
+36,OC 3,145.6300,,,,,CLAC OC--Winlink VARA Packet / Tertiary analog voice
+37,OC 4,431.9250,,,,,CLAC OC-- SIMP-Logistics
+38,SAND 1,145.4300,-,0.6,Tone,107.2,CLAC SOUTH RPTR-- Sandy Repeater (KJ7IY)
+39,SAND 2,145.8100,,,,,CLAC SOUTH SIMP-Sandy Simplex
+40,MOLA 1,440.7000,+,5.0,TSQL,Tx: 77.0; Rx: 77.0,CLAC CERT RPTR-Molalla Fire CERT
+41,SOCO 2,146.5800,,,,,CLAC SOUTH SIMP-Clackamas South County ARES Simplex
+42,SOCO 3,145.6900,,,,,CLAC SOUTH--Winlink VARA Packet / Tertiary analog voice
+43,WEST 1,145.5500,,,,,CLAC WEST SIMP-Clackamas West County ARES Simplex
+44,WEST 2,146.9200,-,0.6,Tone,100.0,CLAC WEST RPRT--(AH6LE)
+45,WEST 3,145.7300,,,,,CLAC WEST--Winlink VARA Packet / Tertiary analog voice
+46,WILS 1,146.4600,,,,,CLAC WEST SIMP Wilsonville Simplex
+47,WILS 2,441.8750,+,5.0,Tone,100.0,CLAC SOUTH Wilsonville Repeater at Parrett Mt.
+48,WILS 3,431.9250,,,,,CLAC WILS 3--SIMP-Wilsonville Logistics
+49,WLIN 1,146.4400,,,,,CLAC WEST SIMP-West Linn Simplex
+50,APRS,144.3900,,,,,IARU Region 2 APRS Frequency
+51,D1-1,147.3200,+,0.6,Tone,100.0,D-1 Primary Net Repeater  [OEM Monitored]
+52,D1-2,146.8400,-,0.6,,,D-1 Secondary / Multnomah Co. ARES Primary Repeater
+53,D4-1,146.7800,-,0.6,Tone,156.7,D-4 Primary Net Repeater
+54,HRT 1,440.4750,+,5.0,Tone,123.0,HEART Net-Primary Repeater (K0HSU)
+55,HRT 2,442.7000,+,5.0,Tone,100.0,HEART Net Secondary Repeater
+56,INTEL1,145.5200,,,,,Intel Emergency Amateur Radio Service (IEARS)
+57,LDS 1,146.7000,-,0.6,Tone,100.0,CARS LDS Regional Emergency Network--Stonehenge Tower-KE7AWR
+58,NUCALL,446.0000,,,,,National UHF Calling Simplex Frequency
+59,NVCALL,146.5200,,,,,National VHF Calling Simplex Frequency
+60,RED C1,146.9800,-,0.6,DCS,023,Red Cross Repeater (Portland)
+61,RED CR,147.4200,,,,,Red Cross Simplex
+62,OEM 1,145.3300,-,0.6,Tone,186.2,OEM Oregon Emergency Management (Salem)
+63,OEM 2,147.0200,+,0.6,Tone,186.2,Oregon Emergency Management (OEM Salem)
+64,OEM 3,144.9900,,,,,RMS Winlink VARA FM Packet W7ODN-10 / OEM EOC: w7oem@winlink.org
+65,PROV 1,146.4600,,,,,Providence Hospital Simplex Channel
+66,PROV 2,443.2250,+,5.0,Tone,107.2,Providence Portland Medical Center Repeater Frequency
+67,PROV 3,444.8500,+,5.0,Tone,123.0,Providence St. Vincent Medical Center Repeater Frequency
+68,W7SRA,146.8600,-,0.6,Tone,186.2,Salem Prospect Hill--W7SRA Repeater
+69,YELLOW,147.1200,+,0.6,Tone,100.0,Version Control Channel--Yellow released 2024-05-01
