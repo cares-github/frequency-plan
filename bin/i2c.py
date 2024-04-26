@@ -488,6 +488,13 @@ def ics_parse(raw_ics_data):
 
         chirp_frequency = parse_frequency(ics_row[2])
 
+        # We have some awkward channels that have a precision down to 500 Hz
+        # We need to catch these and change the tuning step to 12.5 kHz
+        # otherwise some radios baulk.
+        chirp_tune_step = DEFAULT_TUNE_STEP
+        if int(float(chirp_frequency) * 10000.0) % 10 > 0:
+            chirp_tune_step = 12.5
+
         # CHIRP does not use a transmit frequency. It deduces it from the
         # receive frequency, offset and Duplex sign. So column 3 in the CARES
         # frequency list is ignored.
@@ -546,7 +553,7 @@ def ics_parse(raw_ics_data):
              chirp_dcs_code,          # Set if DCS is being used
              chirp_dcs_polarity,      # Usually NN - as previous.
              chirp_modulation,         # Almost always FM
-             DEFAULT_TUNE_STEP,        # This is the minimum increment for the
+             chirp_tune_step,        # This is the minimum increment for the
                                        # tuning dial.
              DEFAULT_SKIP,             # We don't skip anything.
              chirp_description,        # The comment.
