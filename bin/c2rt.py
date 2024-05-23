@@ -240,7 +240,7 @@ def convert(input_file, output_file):
 
 if __name__ == '__main__':
     input_file = '../chirp_csv/2m_and_70cm.csv'
-    output_file = '../rt_csv/RTN_2m_and_70cm.csv'
+    output_file = '../rt_csv/RT_2m_and_70cm.csv'
 #    input_file = '../chirp_csv/1.25m.csv'
 #    output_file = '../rt_csv/RT_1.25m.csv'
 #    input_file = '../chirp_csv/6m.csv'
