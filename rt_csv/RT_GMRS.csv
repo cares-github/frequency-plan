@@ -1,0 +1,14 @@
+Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Tone Mode,CTCSS,DCS,PR Freq,Tx Power,Skip,Step,Clock Shift,Comment
+500,462.55000,467.55000,5.00 MHz,Plus,FM,POR15R,T Sql,100.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Portland ARRG Owned
+501,462.57500,467.57500,5.00 MHz,Plus,FM,ORC16R,T Sql,141.3 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Oak Lodge CERT
+502,462.57500,467.57500,5.00 MHz,Plus,FM,ORC16R,T Sql,110.9 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Oregon City
+503,462.60000,467.60000,5.00 MHz,Plus,FM,LAK17R,T Sql,123.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Lake Oswego CERT
+504,462.62500,467.62500,5.00 MHz,Plus,FM,POR18R,T Sql,156.7 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Portland
+505,462.65000,467.65000,5.00 MHz,Plus,FM,MOL19R,T Sql,100.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Molalla
+506,462.67500,467.67500,5.00 MHz,Plus,FM,ORC20R,T Sql,218.1 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Oregon City
+507,462.70000,467.70000,5.00 MHz,Plus,FM,GRE21R,T Sql,210.7 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Gresham
+508,462.70000,467.70000,5.00 MHz,Plus,FM,MIL21R,T Sql,167.9 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Milwaukie
+509,462.70000,467.70000,5.00 MHz,Plus,FM,SHE21R,T Sql,141.3 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Sherwood
+510,462.72500,467.72500,5.00 MHz,Plus,FM,WIL22R,T Sql,110.9 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Wilsonville
+511,462.72500,467.72500,5.00 MHz,Plus,FM,OAK22R,T Sql,123.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,GMRS RPTR Oak Lodge CERT
+512,462.72500,467.72500,5.00 MHz,Plus,FM,YELLOW,T Sql,123.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Yellow released 2024-0...

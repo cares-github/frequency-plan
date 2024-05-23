@@ -1,0 +1,12 @@
+Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Tone Mode,CTCSS,DCS,PR Freq,Tx Power,Skip,Step,Clock Shift,Comment
+230,224.18000,222.58000,1.60 MHz,Minus,FM,C220 1,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES RPTR CARES Highland Butte (not yet bu...
+231,223.42000,223.42000,,Simplex,FM,C220 2,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 1
+232,223.44000,223.44000,,Simplex,FM,C220 3,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 2
+233,223.46000,223.46000,,Simplex,FM,C220 4,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 3
+234,223.48000,223.48000,,Simplex,FM,C220 5,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 4
+235,223.58000,223.58000,,Simplex,FM,C220 6,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 1
+236,223.60000,223.60000,,Simplex,FM,C220 7,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 2
+237,223.62000,223.62000,,Simplex,FM,C220 8,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 3
+238,224.04000,222.44000,1.60 MHz,Minus,FM,C220 9,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES RPTR CARES (location TBD)
+239,224.14000,222.54000,1.60 MHz,Minus,FM,C22010,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES RPTR CARES (location TBD)
+240,224.18000,222.58000,1.60 MHz,Minus,FM,YELLOW,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Yellow released 2024-0...
