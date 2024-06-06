@@ -490,10 +490,25 @@ def ics_parse(raw_ics_data):
 
         # We have some awkward channels that have a precision down to 500 Hz
         # We need to catch these and change the tuning step to 12.5 kHz
-        # otherwise some radios baulk.
+        # otherwise some radios baulk. Note that we cannot do this using
+        # floating point maths because some frequencies (like 147.14)
+        # when multiplied by 10000.0 are not exact. So the following
+        # doesn't work:
+        # 
+        # if int(float(chirp_frequency) * 10000.0) % 10 > 0:
+        # We have to do this with string manipulation only.
+
         chirp_tune_step = DEFAULT_TUNE_STEP
-        if int(float(chirp_frequency) * 10000.0) % 10 > 0:
-            chirp_tune_step = 12.5
+        # Split the frequency string on the decimal point. We're going
+        # to look at the number of non-zero digits after the decimal.
+        freq_parts = chirp_frequency.split('.')
+        # Look at the fourth digit after the decimal. If it is non-zero,
+        # then the step has to change to 12.5 kHz from the default.
+        if len(freq_parts) != 2:
+            raise ValueError(f'The frequency {freq_parts} does not have a '
+                             'decimal point')
+        if freq_parts[1][3] != '0':
+            chirp_tune_step = '12.50'
 
         # CHIRP does not use a transmit frequency. It deduces it from the
         # receive frequency, offset and Duplex sign. So column 3 in the CARES
