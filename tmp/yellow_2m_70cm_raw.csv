@@ -1,5 +1,5 @@
 Communications Resource Availability Worksheet,,,,2 M & 440 band VHF/UHF Analog  and Digital Frequencies,,,,"Active Date: May 1, 2024",Denotes Changes from RED U3
-ICS-217A,,,,Clackamas County ARES,,,,2024 Yellow                04-12,Questions or comments?
+ICS-217A,,,,Clackamas County ARES,,,,2024 Yellow U1               2024-06-05,Questions or comments?
 Channel,Alias,RX Freq,TX Freq,Offset,Mode,TX Tone,RX Tone,Use,
 1,CLAC 1,147.1200,147.7200,0.6,FM,100,,CLAC ARES RPTR Clackamas Primary Repeater (OEM Monitored) echo,
 2,CLAC 2,147.1400,147.7400,0.6,FM,107.2,,CLAC ARES RPTR Clackamas Secondary Repeater,
@@ -68,5 +68,6 @@ Channel,Alias,RX Freq,TX Freq,Offset,Mode,TX Tone,RX Tone,Use,
 65,PROV 1,146.4600,146.4600,,FM,,,Providence Hospital Simplex Channel,New this version
 66,PROV 2,443.2250,448.2250,5,FM,107.2,,Providence Portland Medical Center Repeater Frequency,
 67,PROV 3,444.8500,449.8500,5,FM,123.0,,Providence St. Vincent Medical Center Repeater Frequency,
-68,W7SRA,146.8600,146.2600,-0.6,FM,186.2,,Salem Prospect Hill--W7SRA Repeater,
-69,YELLOW,147.1200,147.7200,0.6,FM,100.0,,Version Control Channel--Yellow released 2024-05-01,
+68,W7SRA,146.8600,146.2600,-0.6,FM,186.2,,Salem Prospect Hill--W7SRA Repeater,New this version
+69,CLAC11,146.8000,146.2000,-0.6,FM,107.2,,Four site (Barlow Trail) simulcast system--Western Oregon Radio Club--KJ7IY,New this version
+70,YELLU1,147.1200,147.7200,0.6,FM,100.0,,Version Control Channel--Yellow released 2024-05-01,
