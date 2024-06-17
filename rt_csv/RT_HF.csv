@@ -6,8 +6,8 @@ Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Dire
 205,3.97000,3.97000,,Simplex,LSB,ORHF 5,None,,,1500 Hz,High,Off,5.00 kHz,Off,Noontime Net--Health and Welfare traffic @ 1130...
 206,3.98000,3.98000,,Simplex,LSB,ORHF 6,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon Emergency Net @ 1900
 207,3.99000,3.99000,,Simplex,LSB,ORHF 7,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon Weather Net
-208,3.99350,3.99350,,Simplex,LSB,ORHF 8,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon NTS Traffic Net--Daily @ 1730
-209,3.99350,3.99350,,Simplex,LSB,ORHF 9,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon State Emergency Net Frequency
+208,3.99350,3.99350,,Simplex,LSB,ORHF 8,None,,,1500 Hz,High,Off,12.50 kHz,Off,Oregon NTS Traffic Net--Daily @ 1730
+209,3.99350,3.99350,,Simplex,LSB,ORHF 9,None,,,1500 Hz,High,Off,12.50 kHz,Off,Oregon State Emergency Net Frequency
 210,3.58700,3.58700,,Simplex,CW,ORHF 10,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon NTS CW Net
 211,5.35700,5.35700,,Simplex,USB,ORHF 11,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon Daytime Net Frequency
 212,7.24800,7.24800,,Simplex,LSB,ORHF 12,None,,,1500 Hz,High,Off,5.00 kHz,Off,Oregon Primary Daytime Net Frequency*
@@ -16,14 +16,14 @@ Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Dire
 215,28.41000,28.41000,,Simplex,USB,ORHF 15,None,,,1500 Hz,High,Off,5.00 kHz,Off,Clackamas County ARES 10 Meter SSB Primary
 216,28.58000,28.58000,,Simplex,USB,ORHF 16,None,,,1500 Hz,High,Off,5.00 kHz,Off,Clackamas County ARES 10 Meter SSB Secondary
 217,29.40000,29.40000,,Simplex,FM,ORHF 17,None,,,1500 Hz,High,Off,5.00 kHz,Off,Clackamas County ARES 10 Meter FM
-218,3.58750,3.58750,,Simplex,USB,ORHF 18,None,,,1500 Hz,High,Off,5.00 kHz,Off,"Clackamas County PACTOR III"""
-219,7.10120,7.10120,,Simplex,USB,ORHF 19,None,,,1500 Hz,High,Off,5.00 kHz,Off,"Clackamas County PACTOR III"""
-220,14.10820,14.10820,,Simplex,USB,ORHF 20,None,,,1500 Hz,High,Off,5.00 kHz,Off,"Clackamas County PACTOR III"""
-221,3.97770,3.97770,,Simplex,LSB,SATERN,None,,,1500 Hz,High,Off,5.00 kHz,Off,Satern Western Regional Net
+218,3.58750,3.58750,,Simplex,USB,ORHF 18,None,,,1500 Hz,High,Off,12.50 kHz,Off,"Clackamas County PACTOR III"""
+219,7.10120,7.10120,,Simplex,USB,ORHF 19,None,,,1500 Hz,High,Off,12.50 kHz,Off,"Clackamas County PACTOR III"""
+220,14.10820,14.10820,,Simplex,USB,ORHF 20,None,,,1500 Hz,High,Off,12.50 kHz,Off,"Clackamas County PACTOR III"""
+221,3.97770,3.97770,,Simplex,LSB,SATERN,None,,,1500 Hz,High,Off,12.50 kHz,Off,Satern Western Regional Net
 222,29.60000,29.60000,,Simplex,FM,N10CAL,None,,,1500 Hz,High,Off,5.00 kHz,Off,National 10 Meter FM Call
 223,3.81500,3.81500,,Simplex,LSB,NW LDS,None,,,1500 Hz,High,Off,5.00 kHz,Off,North America/Northwest LDS Emergency Channel
 224,3.96400,3.96400,,Simplex,LSB,PRO80,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Primary 80 meter
 225,3.86400,3.86400,,Simplex,LSB,PRO80S,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Secondary 80 meter
 226,7.23800,7.23800,,Simplex,LSB,PRO40,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Primary  40 meter
 227,7.24800,7.24800,,Simplex,LSB,PRO40S,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Secondary 40 meter
-228,1.97800,1.97800,,Simplex,LSB,YELLOW,None,,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Yellow released 2024-0...
+228,1.97800,1.97800,,Simplex,LSB,YELLU1,None,,,1500 Hz,High,Off,5.00 kHz,Off,VC Ch. Yellow U1 rel: 2024-06-10
