@@ -1,0 +1,32 @@
+Communications Resource Availability Worksheet,,,,HF Analog and Digital Frequencies,,,,"Active Date: May 1, 2024",Denotes Changes from RED U3
+ICS-217A,,,,Clackamas County ARES,,,,2024 Yellow U1               2024-06-10,Questions or comments?
+Channel,Alias,RX Freq,TX Freq,Offset,Mode,TX Tone,RX Tone,Description     ,
+201,ORHF 1,1.9780,1.9780,,LSB,,,Oregon Nighttime Net Frequency*,
+202,ORHF 2,3.8250,3.8250,,LSB,,,Oregon Nighttime Net Frequency,
+203,ORHF 3,3.9200,3.9200,,LSB,,,Beaver State Net--Health and Welfare traffic,
+204,ORHF 4,3.9640,3.9640,,LSB,,,Oregon ARES Emergency Net*,
+205,ORHF 5,3.9700,3.9700,,LSB,,,Noontime Net--Health and Welfare traffic @ 1130--Alternate to 7.2840,Added this version
+206,ORHF 6,3.9800,3.9800,,LSB,,,Oregon Emergency Net @ 1900,
+207,ORHF 7,3.9900,3.9900,,LSB,,,Oregon Weather Net,
+208,ORHF 8,3.9935,3.9935,,LSB,,,Oregon NTS Traffic Net--Daily @ 1730,
+209,ORHF 9,3.9935,3.9935,,LSB,,,Oregon State Emergency Net Frequency,
+210,ORHF 10,3.5870,3.5870,,CW,,,Oregon NTS CW Net,
+211,ORHF 11,5.3570,5.3570,,USB,,,Oregon Daytime Net Frequency,
+212,ORHF 12,7.2480,7.2480,,LSB,,,Oregon Primary Daytime Net Frequency*,
+213,ORHF 13,7.2840,7.2840,,LSB,,,Noontime Net--Health and Welfare traffic @ 1130,Change this version
+214,ORHF 14,14.2900,14.290,,USB,,,Clackamas County ARES 20 Meter SSB ,
+215,ORHF 15,28.4100,28.4100,,USB,,,Clackamas County ARES 10 Meter SSB Primary  ,
+216,ORHF 16,28.5800,28.5800,,USB,,,Clackamas County ARES 10 Meter SSB Secondary,
+217,ORHF 17,29.4000,29.4000,,FM,,,Clackamas County ARES 10 Meter FM ,
+218,ORHF 18,3.5875,3.5875,,USB,,,"Clackamas County PACTOR III, VARA RMS Gateway KD7ZDO",
+219,ORHF 19,7.1012,7.1012,,USB,,,"Clackamas County PACTOR III, VARA RMS Gateway KD7ZDO",Change this version
+220,ORHF 20,14.1082,14.1027,,USB,,,"Clackamas County PACTOR III, VARA RMS Gateway KD7ZDO",Change this version
+221,SATERN,3.9777,3.9777,,LSB,,,Satern Western Regional Net,
+222,N10CAL,29.6000,29.6000,,FM,,,National 10 Meter FM Call,
+223,NW LDS,3.8150,3.8150,,LSB,,,North America/Northwest LDS Emergency Channel,
+224,PRO80,3.964,3.964,,LSB,,,Providence Hospital Primary 80 meter,Added this version
+225,PRO80S,3.864,3.864,,LSB,,,Providence Hospital Secondary 80 meter,Added this version
+226,PRO40,7.238,7.238,,LSB,,,Providence Hospital Primary  40 meter,Added this version
+227,PRO40S,7.248,7.248,,LSB,,,Providence Hospital Secondary 40 meter,Added this version
+228,YELLU1,1.9780,1.9780,,LSB,,,VC Ch. Yellow U1 rel: 2024-06-10,
+
