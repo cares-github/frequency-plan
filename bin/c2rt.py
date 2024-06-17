@@ -240,16 +240,26 @@ def convert(input_file: str, output_file: str) -> int:
 # Programme entry point
 # ----------------------------------------------------------------------------
 
+import os.path
+SOURCE_DIR = 'chirp_csv'
+DEST_DIR = 'rt_csv'
 if __name__ == '__main__':
-    input_file = '../chirp_csv/2m_and_70cm.csv'
-    output_file = '../rt_csv/RT_2m_and_70cm.csv'
-#    input_file = '../chirp_csv/1.25m.csv'
-#    output_file = '../rt_csv/RT_1.25m.csv'
-#    input_file = '../chirp_csv/6m.csv'
-#    output_file = '../rt_csv/RT_6m.csv'
-#    input_file = '../chirp_csv/GMRS.csv'
-#   output_file = '../rt_csv/RT_GMRS.csv'
-#    input_file = '../chirp_csv/HF.csv'
-#    output_file = '../rt_csv/RT_HF.csv'
-    num_rows: int = convert(input_file, output_file)
-    print(f'{num_rows} channels converted from CHIRP format to RT Systems format.')
+
+    if not os.path.isdir(SOURCE_DIR):
+        err = f'Cannot find CHIRP CSV source directory "{SOURCE_DIR}" ' \
+            'in the current working directory'
+        raise ValueError(err)
+    if not os.path.isdir(DEST_DIR):
+        err = f'Cannot find RT CSV destination directory "{DEST_DIR}" ' \
+            'in the current working directory'
+        raise ValueError(err)
+    
+    base_file_names = ['2m_and_70cm.csv', '1.25m.csv', '6m.csv','GMRS.csv','HF.csv']
+
+    for (file_stem) in base_file_names:
+        input_file = SOURCE_DIR + '/' + file_stem
+        output_file = DEST_DIR + '/rt_' + file_stem
+        print(f'Converting chirp file {input_file} to RT {output_file}')
+        num_rows: int = convert(input_file, output_file)
+        print(f'{num_rows} channels converted from CHIRP format to RT Systems format.')
+        print()
