@@ -68,4 +68,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 67,PROV 3,444.850000,+,5.000000,Tone,123.0,88.5,023,NN,FM,5.00,,"Providence St. Vincent Medical Center Repeater Frequency",,,
 68,W7SRA,146.860000,-,0.600000,Tone,186.2,88.5,023,NN,FM,5.00,,"Salem Prospect Hill--W7SRA Repeater",,,
 69,CLAC11,146.800000,-,0.600000,Tone,107.2,88.5,023,NN,FM,5.00,,"Four site (Barlow Trail) simulcast system--Western Oregon Radio Club--KJ7IY",,,
-70,YELLU1,147.120000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"Version Control Channel--Yellow released 2024-06-10",,,
+70,YELLU1,147.120000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"Version Control Channel--Yellow U1 released 2024-06-10",,,
