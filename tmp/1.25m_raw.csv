@@ -1,0 +1,14 @@
+Communications Resource Availability Worksheet,,,,220 band VHF Analog and Digital Frequencies,,,,"Active Date: May 1, 2024",Denotes Changes from RED U3
+ICS-217A,,,,Clackamas County ARES,,,,2024 Yellow U1               2024-06-10,Questions or comments?
+Channel,Alias,RX Freq,TX Freq,Offset,Mode,TX Tone,RX Tone,Description     ,
+230,C220 1,224.1800,222.5800,-1.6,FM,103.5,103.5,CLAC ARES RPTR CARES Highland Butte (not yet built),
+231,C220 2,223.4200,223.4200,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 1,
+232,C220 3,223.4400,223.4400,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 2,
+233,C220 4,223.4600,223.4600,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 3,
+234,C220 5,223.4800,223.4800,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Simplex 4,
+235,C220 6,223.5800,223.5800,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 1,
+236,C220 7,223.6000,223.6000,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 2,
+237,C220 8,223.6200,223.6200,,FM,,,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digital 3,
+238,C220 9,224.0400,222.4400,-1.6,FM,103.5,103.5,CLAC ARES RPTR CARES (location TBD),
+239,C22010,224.1400,222.4500,-1.6,FM,103.5,103.5,CLAC ARES RPTR CARES (location TBD),
+240,YELLU1,224.1800,222.5800,-1.6,FM,103.5,103.5,Version Control Channel--Yellow U1 released 2024-06-10,
