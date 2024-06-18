@@ -26,4 +26,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 225,PRO80S,3.864000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Providence Hospital Secondary 80 meter",,,
 226,PRO40,7.238000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Providence Hospital Primary  40 meter",,,
 227,PRO40S,7.248000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Providence Hospital Secondary 40 meter",,,
-228,YELLU1,1.978000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"Version Control Channel--Yellow U1 released 2024-06-10",,,
+228,YELLU1,1.978000,,0.000000,,88.5,88.5,023,NN,LSB,5.00,,"VC Ch. Yellow U1 rel: 2024-06-10",,,
