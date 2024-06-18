@@ -7,4 +7,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 255,N6CALL,52.525000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"National 6 meter call",,,
 256,6MHOOD,52.970000,-,1.700000,Tone,107.2,88.5,023,NN,FM,5.00,,""6 Meter repeater--Timberline",,,
 257,6MBALD,52.830000,-,1.700000,Tone,107.2,88.5,023,NN,FM,5.00,,""6 Meter repeater--Bald Peak",,,
-258,YELLU1,52.310000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"VC Ch. Yellow U1 rel: 2024-06-10",,,
+258,YELLU1,52.310000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"Version Control Channel--Yellow U1 released 2024-06-10",,,
