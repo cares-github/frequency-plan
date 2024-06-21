@@ -30,7 +30,8 @@ import sys
 # channel name in the first or last or both channels in a radio. Be sure to
 # update that file when changing the version name for a frequency plan release.
 
-VERSION_TOKEN_FILE = "../CURRENT_VERSION_TOKEN.txt"
+# VERSION_TOKEN_FILE = "../CURRENT_VERSION_TOKEN.txt"
+VERSION_TOKEN_FILE = "./CURRENT_VERSION_TOKEN.txt"
 
 # Be sure to update this string as it is prepended to the list of rows and
 # added to the end of the list for writing out to the CSV.
@@ -74,6 +75,14 @@ CHIRP_CSV_HEADER_FIELDS = ",".join(["Location",
                                     "URCALL",
                                     "RPT1CALL",
                                     "RPT2CALL"])
+
+# This regex is used to quickly determine if an input row is unlikely to
+# be an actual channel. This is used to reject comment lines, etc.
+#
+# It looks for lines that start with a channel number consisting of one
+# to three digits, then a channel name, followed by a potential
+# frequency. This is rough and ready, but should do the job.
+QUICK_CHANNEL_CHECK = re.compile('^\d{1,3},[A-Z][A-Z0-9 ]{1,5},\d{1,3}\.\d{1,4}')
 
 # This is the first channel number for CHIRP This is known as the 'Location'
 # column value in CHIRP vocabulary.
@@ -211,9 +220,11 @@ def read_ICS_217A(ICS_217A_filename):
     current_line_num = 0
     with open(ICS_217A_filename, mode='r', newline=None) as ip:
         for input_line in ip:
-            if current_line_num >= g_skip_rows:
+            if current_line_num < g_skip_rows:
+                current_line_num += 1
+                continue
+            if QUICK_CHANNEL_CHECK.match(input_line):
                 raw_input_lines.append(input_line)
-            current_line_num += 1
 
     return raw_input_lines
 
@@ -580,23 +591,31 @@ def ics_parse(raw_ics_data):
 
 # ------------------------------------------------------------------------------
 class NumberOfFilesError(Exception):
-    """Raised when the user passes in the wrong number of files on the command line.
+    """Raised when the user passes in the wrong number of files on the
+    command line.
     """
     pass
 
 def get_filenames(args):
     """Checks that the user passed in some filenames
 
-    This function currently bails out if the wrong number of files were specified.
+    This function currently bails out if the wrong number of files were
+    specified.
 
-    Returns - a tuple containing the input file name and output file name
+    Returns - a tuple containing the input file name and output file
+    name
     """
     input_filename = None
     output_filename = None
-    if len(args) == 2:
+    num_args = len(args)
+    if num_args == 1:
+        # We have to assume that the given argument is the input file
+        input_filename = args[0]
+    elif len(args) == 2:
         input_filename, output_filename = args[0], args[1]
     else:
-        logging.error("Incorrect number of filenames. There should be an input and output file specified")
+        logging.error("Incorrect number of filenames. There should be an "
+                      "input and output file specified")
         raise NumberOfFilesError()
     return (input_filename, output_filename)
 
@@ -605,11 +624,17 @@ def get_filenames(args):
 def generate_output(output_filename, rows, use_control_channel):
     """Writes the generated rows out to the specified file.
 
-    output_filename - just like it says
+    output_filename - just like it says. If None, assume sys.stdout
     rows - the channel rows to write out to output_filename
     use_control_channel - if True, then the control channel is written out.
     """
-    with open(output_filename, 'w', newline=None) as op:
+    output_handle = None
+    if output_filename is not None:
+        output_handle = open(output_filename, 'w', newline=None)
+    else:
+        output_handle = open(sys.stdout.fileno(), 'w', closefd=False, newline=None)
+
+    with output_handle as op:
         op.write(CHIRP_CSV_HEADER_FIELDS + '\n')
 
         # Put in the row that tells us this is the particular colour plan.
@@ -629,15 +654,19 @@ def generate_output(output_filename, rows, use_control_channel):
 
 # ------------------------------------------------------------------------------
 def load_version_channel_name():
-    """Loads and uses the version channel name from a token file in a specific location
+    """Loads and uses the version channel name from a token file in a
+    specific location
 
-    Reads in the file (hardwired path/name stored in VERSION_TOKEN_FILE) and uses that content, if it can to build up the version channel row information.
+    Reads in the file (hardwired path/name stored in VERSION_TOKEN_FILE)
+    and uses that content, if it can to build up the version channel row
+    information.
 
-    This function will shut the programme down if the file is not found or, if it is found, the data does not match the required pattern.
+    This function will shut the programme down if the file is not found
+    or, if it is found, the data does not match the required pattern.
     """
     global g_control_channel
-    # A bunch of regular expressions. These only get used once, so it is fine to
-    # keep them hidden away in this function definition.
+    # A bunch of regular expressions. These only get used once, so it is
+    # fine to keep them hidden away in this function definition.
     #
     # Matches any line that has either no or only whitespace.
     blank_line_re = re.compile('^\s*$')
@@ -711,7 +740,7 @@ def process_options():
             except ValueError:
                 logging.error(f'Trying to convert {a} to a positive integer failed. Ignoring')
                 skip_rows = NUMBER_ROWS_TO_IGNORE_IN_SRC
-            if skip_rows >= 0 and skip_rows < 10:
+            if skip_rows >= 0 and skip_rows < 100:
                 g_skip_rows = skip_rows
             else:
                 logging.warning("The number of rows to skip is out of range "
