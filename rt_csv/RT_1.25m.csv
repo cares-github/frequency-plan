@@ -9,4 +9,7 @@ Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Dire
 237,223.62000,223.62000,,Simplex,FM,C220 8,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 1.25 Meter Digita...
 238,224.04000,222.44000,1.60 MHz,Minus,FM,C220 9,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES RPTR CARES (location TBD)
 239,224.14000,222.54000,1.60 MHz,Minus,FM,C22010,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES RPTR CARES (location TBD)
-240,224.18000,222.58000,1.60 MHz,Minus,FM,YELLU1,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,VC Ch. Yellow U1 rel: 2024-06-10
+240,224.20000,222.60000,1.60 MHz,Minus,FM,C220CA,Tone,100.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,"CLAC ARES RPTR"""
+241,224.30000,222.70000,1.60 MHz,Minus,FM,C220MO,Tone,100.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,"CLAC ARES RPTR"""
+242,224.34000,222.74000,1.60 MHz,Minus,FM,C220OC,Tone,100.0 Hz,,1500 Hz,High,Off,5.00 kHz,Off,"CLAC ARES RPTR"""
+246,224.18000,222.58000,1.60 MHz,Minus,FM,GREEN,T Sql,103.5 Hz,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Green 2025-05-20
