@@ -4,7 +4,5 @@ Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Dire
 252,52.35000,52.35000,,Simplex,FM,C6M 3,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 3
 253,52.37000,52.37000,,Simplex,FM,C6M 4,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 4
 254,52.39000,52.39000,,Simplex,USB,C6M 5,None,,,1500 Hz,High,Off,5.00 kHz,Off,CLAC ARES SIMP Clackamas ARES 6 Meter Simplex 5
-255,52.52500,52.52500,,Simplex,FM,N6CALL,None,,,1500 Hz,High,Off,5.00 kHz,Off,National 6 meter call
-256,52.97000,51.27000,1.70 MHz,Minus,FM,6MHOOD,Tone,107.2 Hz,,1500 Hz,High,Off,5.00 kHz,Off,"6 Meter repeater--Timberline"""
-257,52.83000,51.13000,1.70 MHz,Minus,FM,6MBALD,Tone,107.2 Hz,,1500 Hz,High,Off,5.00 kHz,Off,"6 Meter repeater--Bald Peak"""
-258,52.31000,52.31000,,Simplex,FM,YELLU1,None,,,1500 Hz,High,Off,5.00 kHz,Off,VC Ch. Yellow U1 rel: 2024-06-10
+255,52.52500,52.52500,,Simplex,FM,N6CALL,None,,,1500 Hz,High,Off,5.00 kHz,Off,National 6 Meter call
+259,52.31000,52.31000,,Simplex,FM,GREEN,None,,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Green 2025-05-20
