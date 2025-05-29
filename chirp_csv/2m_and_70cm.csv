@@ -51,7 +51,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 50,WILS 2,441.875000,+,5.000000,TSQL,100.0,100.0,023,NN,FM,5.00,,"CLAC SOUTH RPTR--Wilsonville Parrett Mt. (AH6LE)",,,
 51,WILS 3,431.925000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC WILS 3--SIMP-Wilsonville Logistics",,,
 52,WLIN 1,146.440000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC WEST LINN SIMP-West Linn Simplex",,,
-53,WLIN 2,441.675000,+,5.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC WEST Linn RPTR-West Linn--Suncrest Drive (KD7DNM) (Summer 2025)",,,
+53,WLIN 2,441.675000,+,5.000000,Tone,103.5,88.5,023,NN,FM,5.00,,"CLAC WEST Linn RPTR-West Linn--Suncrest Drive (KD7DNM) (Summer 2025)",,,
 54,APRS,144.390000,,0.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"IARU Region 2 APRS Frequency",,,
 55,D1-1,147.320000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"D-1 Primary Net RPTR  [OEM Monitored]--Forest Grove (W7RPT)",,,
 56,D1-2,146.840000,-,0.600000,,88.5,88.5,023,NN,FM,5.00,,"D-1 Secondary / Multnomah Co. ARES Primary RPRT--Portland (W7LT)",,,
