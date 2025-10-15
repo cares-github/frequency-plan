@@ -73,4 +73,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 72,W7SRA,146.860000,-,0.600000,Tone,186.2,88.5,023,NN,FM,5.00,,"Salem RPTR--Prospect Hill (W7SRA)",,,
 73,XBAND1,446.425000,,0.000000,Tone,103.5,88.5,023,NN,FM,5.00,,"Crossband RPTR UHF side 1 (VHF side determined by application)",,,
 74,XBAND2,446.450000,,0.000000,Tone,103.5,88.5,023,NN,FM,5.00,,"Crossband RPTR UHF side 2 (VHF side determined by application)",,,
-75,GREEN,147.120000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"Version Control Channel--Green 2025-05-20",,,
+75,GRENU1,147.120000,+,0.600000,Tone,100.0,88.5,023,NN,FM,5.00,,"Version Control Channel--Green 2025-05-20",,,
