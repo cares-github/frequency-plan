@@ -27,7 +27,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 26,EVENT1,440.275000,+,5.000000,TSQL,103.5,103.5,023,NN,FM,5.00,,"CLAC ARES RPTR Portable UHF--HOW Trailer (KD7ZDO)",,,
 27,EVENT2,144.650000,+,0.600000,TSQL,103.5,103.5,023,NN,FM,5.00,,"CLAC ARES Portable Event Repeater VHF (ORRC Test Pair) (KD7ZDO) (Spring 2025)",,,
 28,EVENT3,440.225000,+,5.000000,TSQL,103.5,103.5,023,NN,FM,5.00,,"CLAC ARES Portable Event Repeater UHF on HOW Trailer (ORRC LARS CH.) (KD7ZDO) (Spring 2025)",,,
-29,LO 1,444.300000,+,5.000000,TSQL,82.5,82.5,023,NN,FM,5.00,,"CLAC LO-1--RPTR Lake Oswego ARES Primary  (Echolink enabled) (WA7LO)",,,
+29,LO 1,440.575000,+,5.000000,TSQL,82.5,82.5,023,NN,FM,5.00,,"CLAC LO-1--RPTR Lake Oswego ARES Primary  (Echolink enabled) (WA7LO)",,,
 30,LO 2,146.500000,,0.000000,TSQL,82.5,82.5,023,NN,FM,5.00,,"CLAC LO-2--SIMP Lake Oswego ARES Simplex Secondary",,,
 31,LO 3,145.530000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC LO-3--Winlink VARA-FM Packet Post Office WA7LO-10 / Digital Channel/Tertiary analog voice",,,
 32,LO 4,431.900000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC LO-4--SIMP- Lake Oswego Logistics",,,
