@@ -53,7 +53,7 @@ as part of that checkpoint.
 | RED U3 | 2023-03-08   | RED-U3    | Previous version  |
 | ORANGE | N/A          |           | Unused            |
 | YELLOW | 2024         | YELLOW    | Current version   |
-| GREEN  |              |           |                   |
+| GREEN  | 2026-01-29   | GREEN-U1  | Current version   |
 | BLUE   |              |           |                   |
 | VIOLET |              |           |                   |
 | GREY   |              |           |                   |
