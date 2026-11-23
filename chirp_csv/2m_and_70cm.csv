@@ -10,6 +10,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 9,CLAC 9,145.790000,,0.000000,,88.5,88.5,023,NN,FM,5.00,,"CLAC ARES SIMP Reserve",,,
 10,CLAC10,444.400000,+,5.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"CLAC ARES RPTR-Wilsonville-South Saddle Mt.  (K7RPT)",,,
 11,CLAC11,146.800000,-,0.600000,Tone,107.2,88.5,023,NN,FM,5.00,,"CLAC ARES RPTR simulcast system--Multi-Site (KJ7IY)",,,
+12,CLAC12,444.050000,+,5.000000,Tone,100.0,88.5,023,NN,FM,5.00,,"CLAC ARES RPTR Repeater Near Highland Butte (K1RKS)",,,
 13,CLAD 1,440.987500,,0.000000,,88.5,88.5,023,NN,NFM,12.50,,"CLAC ARES WinLink RMS Gateway 1 Reserve",,,
 14,CLAD 2,441.037500,,0.000000,,88.5,88.5,023,NN,NFM,12.50,,"CLAC ARES WinLink RMS Gateway 2 Reserve",,,
 15,CLAD 3,441.062500,,0.000000,,88.5,88.5,023,NN,NFM,12.50,,"CLAC ARES WinLink RMS Gateway 3 Reserve",,,
