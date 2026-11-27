@@ -15,4 +15,4 @@ Channel Number,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Dire
 225,3.86400,3.86400,,Simplex,LSB,PRO80S,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Secondary 80 meter
 226,7.23800,7.23800,,Simplex,LSB,PRO40,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Primary  40 meter
 227,7.24800,7.24800,,Simplex,LSB,PRO40S,None,,,1500 Hz,High,Off,5.00 kHz,Off,Providence Hospital Secondary 40 meter
-228,1.97800,1.97800,,Simplex,LSB,GREEN,None,,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Green 2025-05-20
+228,1.97800,1.97800,,Simplex,LSB,BLUE,None,,,1500 Hz,High,Off,5.00 kHz,Off,Version Control Channel--Green 2026-11-17
